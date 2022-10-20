@@ -1,0 +1,66 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+
+entity SQR_FSM is
+	port (
+		r	: in std_logic_vector(31 downto 0):=1;
+		d	: in std_logic_vector(31 downto 0):=2;
+		s	: in std_logic_vector(31 downto 0):=4;
+		
+		x 	: in std_logic_vector(31 downto 0):=9;
+		
+		clock : std_logic;
+		reset : std_logic;
+		
+		r_out : out std_logic_vector(31 downto 0));
+end SQR_FSM;
+
+architecture behavior of SQR_FSM is
+
+component ASP1_SQR is port (
+		in1	: in std_logic_vector(95 downto 0);
+		in2	: in std_logic_vector(95 downto 0);
+		sel	: in std_logic;
+		
+		Z : out std_logic_vector(95 downto 0));
+end component;
+
+signal 	ini_rds : std_logic_vector(95 downto 0);
+signal 	fim_rds : std_logic_vector(95 downto 0);
+
+signal 	sel_sig		: std_logic;
+signal 	saida_mux 	: std_logic_vector(95 downto 0);
+
+signal 	r_sig	: std_logic_vector(31 downto 0);
+signal	d_sig	: std_logic_vector(31 downto 0);
+signal	s_sig	: std_logic_vector(31 downto 0);
+signal 	t	: std_logic_vector(31 downto 0);
+
+signal reg_r : std_logic_vector(31 downto 0);
+signal reg_d : std_logic_vector(31 downto 0);
+signal reg_s : std_logic_vector(31 downto 0);
+	
+begin
+	
+	sqr: ASP1_SQR port map(
+		r	=> r,
+		d	=> d,
+		s	=> s,
+		
+		x 	=> x,
+		
+		clock => clock,
+		reset => reset,
+		
+		r_out => r_out);
+	
+		process(clock, reset)
+		begin
+			
+			
+		end process;
+		
+	
+end behavior;
