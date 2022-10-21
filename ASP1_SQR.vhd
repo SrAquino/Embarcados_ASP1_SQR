@@ -33,7 +33,6 @@ end component;
 signal 	ini_rds : std_logic_vector(95 downto 0);
 signal 	fim_rds : std_logic_vector(95 downto 0);
 
-signal 	sel_sig		: std_logic;
 signal 	saida_mux 	: std_logic_vector(95 downto 0);
 
 signal r	:  std_logic_vector(31 downto 0):="00000000000000000000000000000001";
@@ -55,7 +54,7 @@ begin
 	mux: mux2x1 port map(
 		in1	=> ini_rds,
 		in2	=> fim_rds,
-		sel	=> sel_sig,
+		sel	=> mux_select,
 		
 		Z => saida_mux);
 	

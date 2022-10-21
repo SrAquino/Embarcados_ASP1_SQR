@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Thu Oct 20 15:52:40 2022
+Analysis & Synthesis Status : Successful - Fri Oct 21 15:06:17 2022
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : ASP1_SQR
 Top-level Entity Name : ASP1_SQR
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 2
+Total registers : 96
 Total pins : 70
 Total virtual pins : 0
 Total block memory bits : 0
